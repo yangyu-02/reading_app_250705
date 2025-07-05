@@ -1,12 +1,12 @@
 # Epic 01: Project Setup - TODO List
 
 ## Project Initialization
-- [ ] **Create root project structure**
-  - [ ] Initialize git repository
-  - [ ] Create comprehensive .gitignore for Python, Node, IDEs
-  - [ ] Create root README.md with project overview
-  - [ ] Create LICENSE file (if applicable)
-  - [ ] Setup base directory structure (backend/, frontend/, docker/)
+- [x] **Create root project structure**
+  - [x] Initialize git repository
+  - [x] Create comprehensive .gitignore for Python, Node, IDEs
+  - [x] Create root README.md with project overview
+  - [x] Create LICENSE file (if applicable)
+  - [x] Setup base directory structure (backend/, frontend/, docker/)
 
 - [ ] **Create Makefile**
   - [ ] Add help target with documentation
@@ -16,27 +16,25 @@
   - [ ] Add .PHONY declarations for all targets
 
 ## Backend Setup
-- [ ] **Initialize Python project**
-  - [ ] Install uv package manager
-  - [ ] Create backend/pyproject.toml with project metadata
-  - [ ] Setup Python 3.11+ virtual environment
-  - [ ] Create backend/.gitignore for Python specifics
-  - [ ] Create backend/README.md with setup instructions
+- [x] **Initialize Python project**
+  - [x] Install uv package manager
+  - [x] Create backend/pyproject.toml with project metadata
+  - [x] Setup Python 3.11+ virtual environment
 
-- [ ] **Install core dependencies**
-  - [ ] FastAPI and uvicorn for web framework
-  - [ ] SQLAlchemy 2.0+ and alembic for database
-  - [ ] Pydantic and pydantic-settings for validation
-  - [ ] asyncpg for async PostgreSQL
-  - [ ] python-multipart for file uploads
+- [x] **Install core dependencies**
+  - [x] FastAPI and uvicorn for web framework
+  - [x] SQLAlchemy 2.0+ and alembic for database
+  - [x] Pydantic and pydantic-settings for validation
+  - [x] asyncpg for async PostgreSQL
+  - [x] python-multipart for file uploads
 
-- [ ] **Create FastAPI application structure**
-  - [ ] Create backend/app/__init__.py
-  - [ ] Create backend/app/main.py with FastAPI app
-  - [ ] Create backend/app/core/config.py for settings
-  - [ ] Create backend/app/core/database.py for DB setup
-  - [ ] Create backend/app/api/deps.py for dependencies
-  - [ ] Setup CORS middleware configuration
+- [x] **Create FastAPI application structure**
+  - [x] Create backend/app/__init__.py
+  - [x] Create backend/app/main.py with FastAPI app
+  - [x] Create backend/app/core/config.py for settings
+  - [x] Create backend/app/core/database.py for DB setup
+  - [x] Create backend/app/api/deps.py for dependencies
+  - [x] Setup CORS middleware configuration
 
 - [ ] **Setup database foundation**
   - [ ] Create backend/app/models/__init__.py
