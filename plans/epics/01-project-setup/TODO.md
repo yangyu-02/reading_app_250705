@@ -36,35 +36,34 @@
   - [x] Create backend/app/api/deps.py for dependencies
   - [x] Setup CORS middleware configuration
 
-- [ ] **Setup database foundation**
-  - [ ] Create backend/app/models/__init__.py
-  - [ ] Create backend/app/models/base.py with SQLAlchemy base
-  - [ ] Create backend/app/schemas/__init__.py
-  - [ ] Initialize alembic with alembic init
-  - [ ] Configure alembic.ini for async operation
-  - [ ] Create first migration script
+- [x] **Setup database foundation**
+  - [x] Create backend/app/models/__init__.py
+  - [x] Create backend/app/models/base.py with SQLAlchemy base
+  - [x] Create backend/app/schemas/__init__.py
+  - [x] Initialize alembic with alembic init
+  - [x] Configure alembic.ini for async operation
+  - [x] Create first migration script
 
-- [ ] **Implement basic endpoints**
-  - [ ] Create health check endpoint (/health)
-  - [ ] Create API versioning structure (/api/v1/)
-  - [ ] Setup OpenAPI documentation
-  - [ ] Create script to export OpenAPI spec
-  - [ ] Add basic error handling middleware
+- [x] **Implement basic endpoints**
+  - [x] Create health check endpoint (/health)
+  - [x] Create API versioning structure (/api/v1/)
+  - [x] Setup OpenAPI documentation
+  - [x] ~~Create script to export OpenAPI spec~~ (FastAPI provides this built-in)
+  - [x] Add basic error handling middleware
 
 - [ ] **Setup development tools**
   - [ ] Configure ruff for linting/formatting
+  - [ ] Make sure format on save works with vscode, and that it works for both Python and TypeScript files
   - [ ] Configure mypy for type checking
-  - [ ] Setup pytest with async support
-  - [ ] Create backend/tests/ directory structure
-  - [ ] Add example test for health endpoint
+
 
 ## Frontend Setup
 - [ ] **Initialize React project**
   - [ ] Create frontend with Vite (npm create vite@latest)
   - [ ] Choose React + TypeScript template
-  - [ ] Install pnpm as package manager
+  - [ ] Check if pnpm installed and use it as package manager
   - [ ] Update to latest React 18.x
-  - [ ] Create frontend/.gitignore
+  - [ ] Make sure format on save works with vscode, and that it works for both Python and TypeScript files
 
 - [ ] **Configure TypeScript**
   - [ ] Enable strict mode in tsconfig.json

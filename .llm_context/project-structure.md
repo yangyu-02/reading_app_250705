@@ -17,7 +17,23 @@ reading_app_250705/
 │       ├── 01-project-setup/
 │       ├── 02-*/
 │       └── 03-document-upload/
-├── backend/                    # FastAPI application (when created)
+├── backend/                    # FastAPI application
+│   ├── app/                   # Application package
+│   │   ├── __init__.py        # FastAPI app factory (create_app)
+│   │   ├── models/            # SQLAlchemy models
+│   │   │   ├── __init__.py
+│   │   │   └── base.py        # Base model with TimestampMixin
+│   │   └── schemas/           # Pydantic schemas
+│   │       └── __init__.py
+│   ├── api/                   # API routes
+│   │   └── v1/                # Version 1 API
+│   ├── alembic/               # Database migrations
+│   │   ├── versions/          # Migration files
+│   │   ├── env.py             # Alembic environment (async configured)
+│   │   └── alembic.ini        # Alembic configuration
+│   ├── config.py              # Application configuration
+│   ├── main.py                # Application entry point
+│   └── pyproject.toml         # Python dependencies
 ├── frontend/                   # React application (when created)
 └── docker/                     # Docker configurations (when created)
 ```
@@ -41,4 +57,11 @@ reading_app_250705/
 - **Docker**: Environment-specific configurations
 
 ## Current Status
-This is an early-stage project. The structure will evolve as code is implemented, but the planning/context separation should remain stable.
+Backend foundation is implemented with:
+- FastAPI app with OpenAPI documentation
+- SQLAlchemy 2.0 with async support
+- Alembic migrations configured
+- Basic error handling middleware
+- API versioning structure (/api/v1/)
+
+Frontend and Docker configurations remain to be implemented.
