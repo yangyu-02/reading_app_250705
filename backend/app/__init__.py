@@ -1,10 +1,12 @@
 from fastapi import FastAPI, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
-from config import settings
+
 from api.v1 import api_router
+from config import settings
+
 
 def create_app() -> FastAPI:
     app = FastAPI(
@@ -13,9 +15,9 @@ def create_app() -> FastAPI:
         version="1.0.0",
         openapi_url=f"{settings.API_V1_STR}/openapi.json",
         docs_url="/docs",
-        redoc_url="/redoc"
+        redoc_url="/redoc",
     )
-    
+
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
@@ -23,29 +25,34 @@ def create_app() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    
+
     app.include_router(api_router, prefix=settings.API_V1_STR)
-    
+
     # Add exception handlers
     @app.exception_handler(StarletteHTTPException)
-    async def http_exception_handler(_request: Request, exc: StarletteHTTPException):
+    async def http_exception_handler(
+        _request: Request, exc: StarletteHTTPException
+    ) -> JSONResponse:
         return JSONResponse(
             status_code=exc.status_code,
-            content={"detail": exc.detail, "status_code": exc.status_code}
+            content={"detail": exc.detail, "status_code": exc.status_code},
         )
-    
+
     @app.exception_handler(RequestValidationError)
-    async def validation_exception_handler(_request: Request, exc: RequestValidationError):
+    async def validation_exception_handler(
+        _request: Request, exc: RequestValidationError
+    ) -> JSONResponse:
         return JSONResponse(
-            status_code=422,
-            content={"detail": exc.errors(), "status_code": 422}
+            status_code=422, content={"detail": exc.errors(), "status_code": 422}
         )
-    
+
     @app.exception_handler(Exception)
-    async def general_exception_handler(_request: Request, _exc: Exception):
+    async def general_exception_handler(
+        _request: Request, _exc: Exception
+    ) -> JSONResponse:
         return JSONResponse(
             status_code=500,
-            content={"detail": "Internal server error", "status_code": 500}
+            content={"detail": "Internal server error", "status_code": 500},
         )
-    
+
     return app

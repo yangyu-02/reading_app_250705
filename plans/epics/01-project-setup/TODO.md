@@ -1,6 +1,7 @@
 # Epic 01: Project Setup - TODO List
 
 ## Project Initialization
+
 - [x] **Create root project structure**
   - [x] Initialize git repository
   - [x] Create comprehensive .gitignore for Python, Node, IDEs
@@ -16,6 +17,7 @@
   - [ ] Add .PHONY declarations for all targets
 
 ## Backend Setup
+
 - [x] **Initialize Python project**
   - [x] Install uv package manager
   - [x] Create backend/pyproject.toml with project metadata
@@ -29,7 +31,7 @@
   - [x] python-multipart for file uploads
 
 - [x] **Create FastAPI application structure**
-  - [x] Create backend/app/__init__.py
+  - [x] Create backend/app/**init**.py
   - [x] Create backend/app/main.py with FastAPI app
   - [x] Create backend/app/core/config.py for settings
   - [x] Create backend/app/core/database.py for DB setup
@@ -37,9 +39,9 @@
   - [x] Setup CORS middleware configuration
 
 - [x] **Setup database foundation**
-  - [x] Create backend/app/models/__init__.py
+  - [x] Create backend/app/models/**init**.py
   - [x] Create backend/app/models/base.py with SQLAlchemy base
-  - [x] Create backend/app/schemas/__init__.py
+  - [x] Create backend/app/schemas/**init**.py
   - [x] Initialize alembic with alembic init
   - [x] Configure alembic.ini for async operation
   - [x] Create first migration script
@@ -51,13 +53,13 @@
   - [x] ~~Create script to export OpenAPI spec~~ (FastAPI provides this built-in)
   - [x] Add basic error handling middleware
 
-- [ ] **Setup development tools**
-  - [ ] Configure ruff for linting/formatting
-  - [ ] Make sure format on save works with vscode, and that it works for both Python and TypeScript files
-  - [ ] Configure mypy for type checking
-
+- [x] **Setup development tools**
+  - [x] Configure ruff for linting/formatting
+  - [x] Make sure format on save works with vscode, and that it works for both Python and TypeScript files
+  - [x] Configure mypy for type checking
 
 ## Frontend Setup
+
 - [ ] **Initialize React project**
   - [ ] Create frontend with Vite (npm create vite@latest)
   - [ ] Choose React + TypeScript template
@@ -104,6 +106,7 @@
   - [ ] Implement basic responsive design
 
 ## Docker Configuration
+
 - [ ] **Create Docker Compose setup**
   - [ ] Create docker-compose.yml in root
   - [ ] Configure PostgreSQL 16 service
@@ -126,6 +129,7 @@
   - [ ] Create docker/.dockerignore
 
 ## Developer Experience
+
 - [ ] **Complete Makefile targets**
   - [ ] `make install` - Install all dependencies
   - [ ] `make dev` - Start everything
@@ -158,6 +162,7 @@
   - [ ] Add troubleshooting section
 
 ## Testing & Validation
+
 - [ ] **Validate full setup**
   - [ ] Test fresh clone and setup
   - [ ] Verify all Make targets work
@@ -173,6 +178,7 @@
   - [ ] Environment variable loading test
 
 ## Documentation
+
 - [ ] **Update project documentation**
   - [ ] Update CLAUDE.md with setup details
   - [ ] Create architecture diagram
@@ -181,6 +187,7 @@
   - [ ] Create onboarding checklist
 
 ## Final Checklist
+
 - [ ] Project runs with single `make dev` command
 - [ ] Type changes flow from backend to frontend
 - [ ] Hot reload works for both frontend and backend
